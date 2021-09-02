@@ -76,14 +76,15 @@ impl Client {
         let line = format!("{}{}{}", r#"["1", "1", ""#, self.channel.as_ref().unwrap(), r#"", "phx_join", {}]"# );
         let encrypted_data = mask_payload(line);
         let response = send_data(&mut stream_ssl, &encrypted_data);
-        println!("Channel join response: {:?}\n", &response);
+        println!("[-] Channel join response: {:?}\n", &response);
+        println!("[-] Listening data in real time... \n");
 
         loop {
             let mut buffer: Vec<u8> = vec![0u8; 1024];
                 stream_ssl.read(&mut buffer).unwrap();
                 buffer.drain(0..4);
 
-            let response = String::from_utf8_lossy(&buffer);
+            let response = String::from_utf8(buffer).unwrap();
             let r =    response.trim_matches(char::from(0));
             println!("{:?}\n", r);
 

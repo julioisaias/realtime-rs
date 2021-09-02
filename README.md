@@ -1,5 +1,5 @@
 ## A basic and initial implementation of realtime client for supabase.io, build from scratch
-## This is not a crate
+### This is not a crate
 
 ## How to use
 

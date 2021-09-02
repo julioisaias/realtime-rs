@@ -3,7 +3,7 @@
 ## How to use
 
 ```rust
-let url = "wss://qfdzxvjjpsbaiqhrehdda.supabase.co";
+let url = "wss://abc.supabase.co";
 let api = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.zZaAHGQPi1hZ4nJy5CofZRIP686x_8j5_YzFYwEdWNk";
 
 

@@ -2,7 +2,6 @@ use base64;
 use rand::distributions::Alphanumeric;
 use rand::{thread_rng, Rng};
 
-#[derive(Debug)]
 pub struct Header {
     get: String,
     host: String,

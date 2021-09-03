@@ -39,7 +39,7 @@ This is not a crate so some functionality may be missing.
 
 ## Contribution
 
-This is basically that it can help someone who is looking for a solution built from scratch.
+If you like the project, give it a star, or you can contribute. This is basically that it can help someone who is looking for a solution built from scratch.
 
 ## License
 

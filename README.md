@@ -1,7 +1,10 @@
-## A basic and initial implementation of realtime client for supabase.io, build from scratch
-#### This is not a crate
+## Realtime-rs
 
-## How to use
+### A basic and initial implementation of realtime client for supabase.io, build from scratch
+
+### How to use
+
+In the `main.rs` file you can fill in the following data provided by supabase.io:
 
 ```rust
 let url = "wss://abc.supabase.co";
@@ -13,7 +16,13 @@ let resp = client.apikey(api).channel("realtime:*");
     resp.connect();
 ```
 
-# Dependencies
+### Testing
+
+This implementation can be tested using `cargo test` to run tests and `cargo bench` to run bench tests.
+
+### Dependencies
+
+To add the library's Git repository to a Cargo project, add this to your Cargo.toml:
 
 ```toml
 rand = "0.8.4"
@@ -23,6 +32,10 @@ url = "2.2.2"
 base64 = "0.13.0"
 ```
 
-## License
+### Disclaimer
+
+This is not a crate.
+
+### License
 
 MIT or GPL-3.0

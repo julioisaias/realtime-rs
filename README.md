@@ -15,7 +15,7 @@ let client = Client::new(url);
 let resp = client.apikey(api).channel("realtime:*");
     resp.connect();
 ```
-Then run with `cargo run`.
+Then run with `cargo run`. From here you can listen to all the changes made in the cloud database.
 
 ## Testing
 

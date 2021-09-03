@@ -35,7 +35,7 @@ base64 = "0.13.0"
 
 ## Disclaimer
 
-This is not a crate.
+This is not a crate. This is a basic implementation so some functionality may be missing.
 
 ## License
 

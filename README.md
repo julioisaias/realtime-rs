@@ -19,7 +19,7 @@ Then run with `cargo run`. From here you can listen to all the changes made in t
 
 ## Testing
 
-This implementation can be tested using `cargo test` to run tests and `cargo bench` to run bench tests.
+This code can be tested using `cargo test` to run tests and `cargo bench` to run bench tests.
 
 ## Dependencies
 
@@ -35,11 +35,11 @@ base64 = "0.13.0"
 
 ## Disclaimer
 
-This is not a crate. This is a basic implementation so some functionality may be missing.
+This is not a crate so some functionality may be missing.
 
 ## Contribution
 
-This is basically an implementation that can help someone who is looking for some solution built from scratch.
+This is basically that it can help someone who is looking for a solution built from scratch.
 
 ## License
 

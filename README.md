@@ -37,6 +37,10 @@ base64 = "0.13.0"
 
 This is not a crate. This is a basic implementation so some functionality may be missing.
 
+## Contribution
+
+Realtime-es is free open source software developed in my (little) spare time. If you liked the implementation and would like to support further development, please consider contributing, suggesting, or forking.
+
 ## License
 
 MIT

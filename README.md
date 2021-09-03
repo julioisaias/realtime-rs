@@ -15,6 +15,7 @@ let client = Client::new(url);
 let resp = client.apikey(api).channel("realtime:*");
     resp.connect();
 ```
+Then run with `cargo run`.
 
 ## Testing
 

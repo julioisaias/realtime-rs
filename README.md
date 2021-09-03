@@ -38,4 +38,4 @@ This is not a crate.
 
 ## License
 
-MIT or GPL-3.0
+MIT

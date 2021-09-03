@@ -23,7 +23,7 @@ This implementation can be tested using `cargo test` to run tests and `cargo ben
 
 ## Dependencies
 
-To add the library's Git repository to a Cargo project, add this to your Cargo.toml:
+Add this to your Cargo.toml:
 
 ```toml
 rand = "0.8.4"

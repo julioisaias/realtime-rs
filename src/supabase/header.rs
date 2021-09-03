@@ -54,6 +54,8 @@ impl Header {
             websocket_version: "13".to_string(),
             websocket_key: get_web_socket_key(),
         };
+        
+        /* All headers are concatenated into a string */
         format!(
             "{}{}{}{}{}{}",
             h.get(),
@@ -66,6 +68,7 @@ impl Header {
     }
 }
 
+/* A key is generated for the websocket-key */
 pub fn get_web_socket_key() -> String {
     let n1: String = thread_rng()
         .sample_iter(&Alphanumeric)

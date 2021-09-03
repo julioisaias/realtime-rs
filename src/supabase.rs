@@ -51,6 +51,8 @@ impl Client {
     }
 
     pub fn connect(&self) -> () {
+
+        /* TcpStream must pass through TLS first */
         let host = host(&*self.url).to_string();
         let mut into_iter = self.uri().to_socket_addrs().unwrap();
         let connector = TlsConnector::new().unwrap();
@@ -62,25 +64,28 @@ impl Client {
         .unwrap();
         let mut stream_ssl = connector.connect(&host, stream).unwrap();
 
+        /* Here you get basic data from the header */
         let headers = Header::new(
             self.url.to_owned().to_string(),
             self.apikey.to_owned().unwrap(),
         );
         let _ = send_data(&mut stream_ssl, headers.as_bytes());
 
-        /*------------------------------ */
-
+        /* Here you get basic data of the channel */
         let line = format!(
             "{}{}{}",
             r#"["1", "1", ""#,
             self.channel.as_ref().unwrap(),
             r#"", "phx_join", {}]"#
         );
+
+        /* Here the data is encrypted according to the documentation of the websocket protocol --> https://datatracker.ietf.org/doc/html/rfc6455 */
         let encrypted_data = mask_payload(line);
         let response = send_data(&mut stream_ssl, &encrypted_data);
         println!("[-] Channel join response: {:?}\n", &response);
         println!("[-] Listening data in real time... \n");
 
+        /* It listens for changes in the server database */
         loop {
             let mut buffer: Vec<u8> = vec![0u8; 1024];
             stream_ssl.read(&mut buffer).unwrap();
@@ -93,10 +98,13 @@ impl Client {
     }
 }
 
+/* Url parsing */
 fn host(url: &str) -> String {
     Url::parse(&url).unwrap().host_str().unwrap().to_string()
 }
 
+
+/* Get the port according the uri */
 fn port(url: &str) -> String {
     match &*Url::parse(&url).unwrap().scheme().to_string() {
         "wss" => "443".to_string(),
@@ -105,6 +113,7 @@ fn port(url: &str) -> String {
     }
 }
 
+/* Send data to server and expect the response */
 fn send_data<'a>(stream_ssl: &'a mut TlsStream<TcpStream>, buf: &'a [u8]) -> String {
     stream_ssl
         .write_all(&buf)
@@ -118,6 +127,7 @@ fn send_data<'a>(stream_ssl: &'a mut TlsStream<TcpStream>, buf: &'a [u8]) -> Str
     response.trim_matches(char::from(0)).to_owned()
 }
 
+/* Mask data according websocket protocol. --> https://datatracker.ietf.org/doc/html/rfc6455 */
 fn mask_payload(line: String) -> Vec<u8> {
     let mut data: Vec<u8> = Vec::new();
     let mut fin = vec![0x81];

@@ -1,6 +1,6 @@
 ## Realtime-rs
 
-### A basic and initial implementation of realtime client for supabase.io, build from scratch
+A basic and initial implementation of realtime client for supabase.io, build from scratch using pure websocket protocol.
 
 ## How to use
 

@@ -2,7 +2,7 @@
 
 ### A basic and initial implementation of realtime client for supabase.io, build from scratch
 
-### How to use
+## How to use
 
 In the `main.rs` file you can fill in the following data provided by supabase.io:
 
@@ -16,11 +16,11 @@ let resp = client.apikey(api).channel("realtime:*");
     resp.connect();
 ```
 
-### Testing
+## Testing
 
 This implementation can be tested using `cargo test` to run tests and `cargo bench` to run bench tests.
 
-### Dependencies
+## Dependencies
 
 To add the library's Git repository to a Cargo project, add this to your Cargo.toml:
 
@@ -32,10 +32,10 @@ url = "2.2.2"
 base64 = "0.13.0"
 ```
 
-### Disclaimer
+## Disclaimer
 
 This is not a crate.
 
-### License
+## License
 
 MIT or GPL-3.0

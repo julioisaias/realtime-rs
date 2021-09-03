@@ -1,11 +1,8 @@
 use std::io::{Read, Write};
 use std::net::TcpStream;
 use std::net::{SocketAddr, ToSocketAddrs};
-
 use std::time::Duration;
-
 use native_tls::{TlsConnector, TlsStream};
-
 use rand::RngCore;
 use url::Url;
 

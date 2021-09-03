@@ -39,7 +39,7 @@ This is not a crate. This is a basic implementation so some functionality may be
 
 ## Contribution
 
-Realtime-es is free open source software developed in my (little) spare time. If you liked the implementation and would like to support further development, please consider contributing, suggesting, or forking.
+This is basically an implementation that can help someone who is looking for some solution built from scratch.
 
 ## License
 
